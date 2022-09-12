@@ -1,0 +1,19 @@
+.raise-ticket-form-container {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+.raise-ticket-form {
+  width: 90%;
+}
+.form-title {
+  display: flex;
+  justify-content: center;
+}
+.raise-ticket-submit-btn {
+  display: flex;
+  justify-content: center;
+}

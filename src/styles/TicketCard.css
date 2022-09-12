@@ -1,0 +1,43 @@
+.ticket-card-container {
+  border-radius: 5px;
+  width: 66%;
+}
+.ticket-card {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ticket-card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 23px;
+}
+.ticket-card-content {
+  font-size: 18px;
+}
+.dropdown-menu {
+  max-height: 150px;
+  overflow: auto;
+}
+.user-customer-details {
+  display: flex;
+  justify-content: space-around;
+}
+.ticket-status-container {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+.alert-status-dropdown-button {
+  margin-left: 5px;
+}
+.ticket-card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.ticket-card-save-btn {
+  margin: 20px;
+}
+.ticket-time-stamps-container {
+  font-size: 15px;
+}

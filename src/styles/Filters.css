@@ -1,0 +1,13 @@
+.filter-form-container {
+  display: flex;
+  justify-content: space-around;
+}
+.ticket-status {
+  width: 170px;
+}
+.ticket-assigned-to {
+  width: 250px;
+}
+.filter-form-search {
+  width: 80%;
+}

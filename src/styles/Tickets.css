@@ -1,0 +1,31 @@
+.addTicket-filters-btn-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.addTicket-filter-btn {
+  margin: 10px;
+}
+.header {
+  text-align: center;
+}
+.container-tickets {
+  width: 80%;
+  margin: 0 auto;
+}
+.container-tickets .tickets-pagination-container {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.content-tickets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container-filters {
+  margin: 30px auto;
+  width: 80%;
+}

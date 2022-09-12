@@ -1,0 +1,7 @@
+.add-user-btn {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.users-table {
+  margin: 20px;
+}
