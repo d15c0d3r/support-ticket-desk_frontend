@@ -56,7 +56,7 @@ const App = () => {
     return () => {
       unlisten();
     };
-  }, [getUserkey, queryClient, setUserState, getUser.data, userState]);
+  }, [getUserkey, setUserState, getUser.data, userState, queryClient]);
 
   useEffect(() => {
     if (getUser.isLoading || isUseEffectRunning) {

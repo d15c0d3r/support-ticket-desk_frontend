@@ -40,7 +40,7 @@ export const TicketCard = ({
     assignedUser: val.ownerId || "NONE",
     raisedCustomer: val.customerId,
   });
-  console.log(usersData, assignedUser);
+  // console.log(usersData, assignedUser);
   const [updatedTicketDetails, setUpdatedTicketDetails] = useState({});
   const statusItems = [
     {
@@ -80,12 +80,12 @@ export const TicketCard = ({
     const [customerDetails] = customersData.filter(
       (customer) => customer.id === customerId
     );
-    console.log(customerDetails);
+    // console.log(customerDetails);
     return `${customerDetails.name} <${customerId}>`;
   };
   const findUserName = (userId, usersData) => {
     const [userDetails] = usersData.filter((user) => user.id === userId);
-    console.log(userDetails);
+    // console.log(userDetails);
     if (!userDetails) return assignedUser;
     return `${userDetails.name} <${userId}>`;
   };
@@ -297,7 +297,9 @@ export const TicketCard = ({
                     className="user-customer-dropdown-button"
                     placement="bottom"
                   >
-                    {assignedUser === userState.id ? "You" : assignedUser}
+                    {assignedUser === userState.id
+                      ? "You"
+                      : findUserName(assignedUser, usersData)}
                   </Button>
                 )}
               </div>
@@ -317,7 +319,7 @@ export const TicketCard = ({
                     className="user-customer-dropdown-button"
                     placement="bottom"
                   >
-                    {raisedCustomer}
+                    {findCustomerName(raisedCustomer, customersData)}
                   </Button>
                 )}
               </div>

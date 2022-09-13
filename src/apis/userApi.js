@@ -21,6 +21,7 @@ export const addUserByOrgIdAndEmail = async ({
     userEmail,
     userName,
   });
+  console.log(data);
   return data;
 };
 

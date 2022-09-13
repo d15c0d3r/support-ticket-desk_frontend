@@ -107,8 +107,8 @@ export const Insights = () => {
           <Typography.Title>
             {getTicketsForInsights.data?.sla
               ? `SLA : ${parseFloat(getTicketsForInsights.data?.sla).toFixed(
-                  6
-                )} Minutes`
+                  3
+                )} Hours`
               : "No Tickets ResolvedYet!"}
           </Typography.Title>
         </div>
