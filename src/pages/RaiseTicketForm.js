@@ -37,12 +37,32 @@ export const RaiseTicketForm = () => {
     );
   };
 
+  // console.log(getOrg.data);
+
   if (getOrg.isLoading)
     return (
       <>
         <Spinner />
       </>
     );
+
+  if (getOrg.data.error) {
+    return (
+      <>
+        <div
+          className="no-org-fallback-title"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "80vh",
+          }}
+        >
+          <Typography.Title>No Org with such OrgId</Typography.Title>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
@@ -51,7 +71,7 @@ export const RaiseTicketForm = () => {
           <div className="form-title">
             <Form.Item>
               <Typography.Title>
-                Ticket Form : {getOrg?.data?.name}
+                Ticket Form : {getOrg?.data?.name && getOrg?.data?.name}
               </Typography.Title>
             </Form.Item>
           </div>
