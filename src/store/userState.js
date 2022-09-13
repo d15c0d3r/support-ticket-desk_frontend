@@ -8,5 +8,5 @@ const userStatus = atom({
 
 export const useUserState = () => {
   const [userState, setUserState] = useRecoilState(userStatus);
-  return [userState, setUserState];
+  return [userState, setUserState]
 };
