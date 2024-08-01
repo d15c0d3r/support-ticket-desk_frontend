@@ -13,6 +13,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { getUserByEmail } from "./apis/userApi";
 import { signOut } from "firebase/auth";
 import { Spinner } from "./components/Spinner";
+import SubMenu from "antd/lib/menu/SubMenu";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -28,6 +29,8 @@ axios.interceptors.request.use(async (config) => {
   }
 });
 
+const getUserkey = [`get-user`];
+
 const App = () => {
   const queryClient = useQueryClient();
   const location = useLocation();
@@ -36,7 +39,6 @@ const App = () => {
   const [userState, setUserState] = useUserState();
   const [isUseEffectRunning, setIsUseEffectRunning] = useState(true);
   const [fetchingUserdata, setFetchingUserdata] = useState(true);
-  const getUserkey = [`get-user`];
   const getUser = useQuery(getUserkey, getUserByEmail);
 
   useEffect(() => {
@@ -56,7 +58,7 @@ const App = () => {
     return () => {
       unlisten();
     };
-  }, [getUserkey, setUserState, getUser.data, userState, queryClient]);
+  }, [setUserState, getUser.data, userState, queryClient]);
 
   useEffect(() => {
     if (getUser.isLoading || isUseEffectRunning) {
@@ -103,17 +105,18 @@ const App = () => {
         style={{ position: "fixed", minHeight: "100vh" }}
       >
         <div className="logo">Ticket Desk</div>
-        <Menu theme="dark" mode="inline">
-          {[
+        <Menu
+          theme="dark"
+          mode="inline"
+          items={[
             ["/tickets", "Tickets"],
             ["/insights", "Insights"],
             ["/users", "Users"],
-          ].map((navItem, idx) => (
-            <Menu.Item key={idx}>
-              <NavLink to={navItem[0]}>{navItem[1]}</NavLink>
-            </Menu.Item>
-          ))}
-        </Menu>
+          ].map((navItem, idx) => ({
+            key: idx + 1,
+            icon: <NavLink to={navItem[0]}>{navItem[1]}</NavLink>,
+          }))}
+        />
       </Sider>
       <Layout style={{ marginLeft: "200px" }}>
         <Header className="site-layout-sub-header-background">
