@@ -1,5 +1,5 @@
 import axios from "axios";
-export const domain = `http://localhost:5000/apis`;
+import { domain } from "./customerApi";
 
 export const getOrganization = async () => {
   const { data } = await axios.get(`${domain}/orgs`);

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { domain } from "./organizationApi";
+import { domain } from "./customerApi";
 
 export const getAllTicketsByOrgIdandFilters = async ({ queryKey }) => {
   console.log("get All tickets by OrgId API is called");

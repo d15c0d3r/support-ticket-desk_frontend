@@ -13,7 +13,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { getUserByEmail } from "./apis/userApi";
 import { signOut } from "firebase/auth";
 import { Spinner } from "./components/Spinner";
-import SubMenu from "antd/lib/menu/SubMenu";
+import { domain } from "./apis/customerApi";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -32,6 +32,8 @@ axios.interceptors.request.use(async (config) => {
 const getUserkey = [`get-user`];
 
 const App = () => {
+  console.log({ domain });
+
   const queryClient = useQueryClient();
   const location = useLocation();
   const navigate = useNavigate();

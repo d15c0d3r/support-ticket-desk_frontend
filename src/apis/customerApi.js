@@ -1,5 +1,7 @@
 import axios from "axios";
-export const domain = `http://localhost:5000/apis`;
+import env from "react-dotenv";
+
+export const domain = env.DOMAIN;
 
 export const getAllCustomersByOrgId = async ({ queryKey }) => {
   console.log("Get all Customers by Org ID API is called");

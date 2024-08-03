@@ -16,6 +16,7 @@ export const OrganizationForm = () => {
   }, [addOrg.data, addOrg.isSuccess, setorgState]);
 
   const onFinish = (values) => {
+    console.log({ addOrgRequest: values });
     addOrg.mutate(values);
   };
 
